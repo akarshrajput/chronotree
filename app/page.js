@@ -29,7 +29,7 @@ export default async function Home() {
         </h1>
         <p className="text-lg text-muted-foreground">
           Accelerate your product development using the power of React and
-          shadcn/ui's neutral, accessible components.
+          shadcn/ui neutral, accessible components.
         </p>
         <div className="space-x-4">
           <Button size="lg">Get Started</Button>
@@ -101,7 +101,9 @@ export default async function Home() {
           ].map(({ name, role, avatar, testimonial }) => (
             <Card key={name} className="shadow-md">
               <CardContent className="space-y-4">
-                <p className="italic text-muted-foreground">"{testimonial}"</p>
+                <p className="italic text-muted-foreground">
+                  &quot;{testimonial}&quot;
+                </p>
                 <div className="flex items-center space-x-4">
                   <Avatar>
                     <AvatarImage src={avatar} alt={name} />
@@ -135,7 +137,7 @@ export default async function Home() {
             {
               question: "Does it support dark mode?",
               answer:
-                "Absolutely! The components have built-in dark mode support and adapt to your app’s theme automatically.",
+                "Absolutely! The components have built-in dark mode support and adapt to your app theme automatically.",
             },
             {
               question: "Are the components accessible?",
