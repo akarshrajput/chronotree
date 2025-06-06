@@ -7,8 +7,8 @@ export async function middleware(request) {
     secret: process.env.NEXTAUTH_SECRET,
     secureCookie: process.env.NODE_ENV === "production",
   });
-  console.log("Cookies:", request.cookies.getAll());
-  console.log("Token:", token);
+  //   console.log("Cookies:", request.cookies.getAll());
+  //   console.log("Token:", token);
 
   const isLoggedIn = !!token;
   const pathname = request.nextUrl.pathname;
