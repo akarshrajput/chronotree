@@ -10,7 +10,6 @@ const authConfig = {
       clientSecret: process.env.AUTH_GOOGLE_SECRET,
     }),
   ],
-  // callback run before the signup process
   callbacks: {
     async signIn({ user }) {
       try {
@@ -27,18 +26,16 @@ const authConfig = {
         return false;
       }
     },
-    callbacks: {
-      async session({ session }) {
-        const guest = await getUser(session.user.email);
-        session.user.userId = guest._id;
-        session.user.photo = guest.photo;
-        session.user.role = guest.role;
-        return session; // <== add this return
-      },
+    async session({ session }) {
+      const guest = await getUser(session.user.email);
+      session.user.userId = guest._id;
+      session.user.photo = guest.photo;
+      session.user.role = guest.role;
+      return session;
     },
   },
   pages: {
-    SignIn: "/login",
+    signIn: "/login",
   },
 };
 
