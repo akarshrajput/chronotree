@@ -27,11 +27,14 @@ const authConfig = {
         return false;
       }
     },
-    async session({ session }) {
-      const guest = await getUser(session.user.email);
-      session.user.userId = guest._id;
-      session.user.photo = guest.photo;
-      session.user.role = guest.role;
+    callbacks: {
+      async session({ session }) {
+        const guest = await getUser(session.user.email);
+        session.user.userId = guest._id;
+        session.user.photo = guest.photo;
+        session.user.role = guest.role;
+        return session; // <== add this return
+      },
     },
   },
   pages: {
