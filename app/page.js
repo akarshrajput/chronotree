@@ -82,43 +82,90 @@ export default async function Home() {
 
       <Separator />
 
-      {/* Tabs Section */}
+      <section className="w-full px-4 py-16 bg-background">
+        <h2 className="text-center text-3xl font-bold mb-10">
+          Explore ChronoTree
+        </h2>
 
-      <h2 className="text-center text-3xl font-bold mb-6">
-        Explore ChronoTree
-      </h2>
-      <Tabs defaultValue="vaults" className="w-full max-w-4xl mx-auto">
-        <TabsList className="flex justify-center gap-2 w-full">
-          <TabsTrigger value="vaults">Vaults</TabsTrigger>
-          <TabsTrigger value="trees">Family Trees</TabsTrigger>
-          <TabsTrigger value="diaries">Memorial Diaries</TabsTrigger>
-          <TabsTrigger value="future">Time Capsules</TabsTrigger>
-        </TabsList>
-        <TabsContent value="vaults">
-          <p className="mt-4 text-center text-muted-foreground">
-            Create secure digital vaults to store private messages, stories, and
-            files for loved ones.
-          </p>
-        </TabsContent>
-        <TabsContent value="trees">
-          <p className="mt-4 text-center text-muted-foreground">
-            Map your ancestry visually and connect generations with our
-            drag-and-drop tree builder.
-          </p>
-        </TabsContent>
-        <TabsContent value="diaries">
-          <p className="mt-4 text-center text-muted-foreground">
-            Document personal memories, life lessons, and legacy journals in a
-            beautifully formatted diary.
-          </p>
-        </TabsContent>
-        <TabsContent value="future">
-          <p className="mt-4 text-center text-muted-foreground">
-            Send messages to the future. Time-locked vaults deliver emotional
-            impact across generations.
-          </p>
-        </TabsContent>
-      </Tabs>
+        <Tabs defaultValue="vaults" className="w-full max-w-5xl mx-auto">
+          <TabsList className="flex flex-wrap justify-center gap-2 mb-6">
+            <TabsTrigger value="vaults">Vaults</TabsTrigger>
+            <TabsTrigger value="trees">Family Trees</TabsTrigger>
+            <TabsTrigger value="diaries">Memorial Diaries</TabsTrigger>
+            <TabsTrigger value="future">Time Capsules</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="vaults">
+            <Card className="shadow-sm">
+              <CardContent className="p-6 space-y-4 text-center md:text-left">
+                <h3 className="text-xl font-semibold">Secure Legacy Vaults</h3>
+                <p className="text-muted-foreground leading-relaxed text-balance">
+                  ChronoTree Vaults are secure digital spaces where users can
+                  store heartfelt messages, important documents, photos, and
+                  videos for loved ones. These vaults are encrypted and
+                  accessible only by designated family members.
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  You can set up custom release dates, passcode protection, and
+                  even time-delayed messages for future generations.
+                </p>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="trees">
+            <Card className="shadow-sm">
+              <CardContent className="p-6 space-y-4 text-center md:text-left">
+                <h3 className="text-xl font-semibold">Dynamic Family Trees</h3>
+                <p className="text-muted-foreground leading-relaxed text-balance">
+                  Build your family history with our intuitive drag-and-drop
+                  tree builder. Add names, life stories, photos, and connections
+                  across generations.
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  Each member's profile can include their biography, legacy
+                  notes, and even interactive timelines, preserving memories
+                  that last forever.
+                </p>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="diaries">
+            <Card className="shadow-sm">
+              <CardContent className="p-6 space-y-4 text-center md:text-left">
+                <h3 className="text-xl font-semibold">Memorial Diaries</h3>
+                <p className="text-muted-foreground leading-relaxed text-balance">
+                  Capture your thoughts, experiences, and life reflections in a
+                  beautifully styled digital diary. Each entry is private,
+                  secure, and can be shared posthumously.
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  Customize diary covers, organize by chapter, and optionally
+                  include audio or video entries for a deeply personal touch.
+                </p>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="future">
+            <Card className="shadow-sm">
+              <CardContent className="p-6 space-y-4 text-center md:text-left">
+                <h3 className="text-xl font-semibold">Time Capsules</h3>
+                <p className="text-muted-foreground leading-relaxed text-balance">
+                  Send messages to the future with our Time Capsules. Whether
+                  it’s a birthday greeting 10 years from now or a life lesson
+                  for your grandchildren, ChronoTree makes it possible.
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  Choose recipients, lock release dates, and preserve emotions
+                  in a truly timeless way.
+                </p>
+              </CardContent>
+            </Card>
+          </TabsContent>
+        </Tabs>
+      </section>
 
       <Separator />
       <section className="max-w-4xl mx-auto space-y-12">
