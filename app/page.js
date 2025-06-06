@@ -123,9 +123,9 @@ export default async function Home() {
                   across generations.
                 </p>
                 <p className="text-muted-foreground text-sm">
-                  Each member's profile can include their biography, legacy
-                  notes, and even interactive timelines, preserving memories
-                  that last forever.
+                  Each member profile can include their biography, legacy notes,
+                  and even interactive timelines, preserving memories that last
+                  forever.
                 </p>
               </CardContent>
             </Card>
@@ -153,9 +153,9 @@ export default async function Home() {
               <CardContent className="p-6 space-y-4 text-center md:text-left">
                 <h3 className="text-xl font-semibold">Time Capsules</h3>
                 <p className="text-muted-foreground leading-relaxed text-balance">
-                  Send messages to the future with our Time Capsules. Whether
-                  it’s a birthday greeting 10 years from now or a life lesson
-                  for your grandchildren, ChronoTree makes it possible.
+                  Send messages to the future with our Time Capsules. Whether it
+                  is a birthday greeting 10 years from now or a life lesson for
+                  your grandchildren, ChronoTree makes it possible.
                 </p>
                 <p className="text-muted-foreground text-sm">
                   Choose recipients, lock release dates, and preserve emotions
