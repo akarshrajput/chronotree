@@ -65,10 +65,12 @@ const userSchema = new mongoose.Schema(
         link: String,
       },
     ],
-    vault: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Vault",
-    },
+    vaults: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Vault",
+      },
+    ],
     messagesAfterDeath: [
       {
         content: String,

@@ -69,7 +69,7 @@ export async function POST(request) {
   try {
     await connectMongoDB();
     const body = await request.json();
-    const { title, description, theme, vaultType, category, author } = body;
+    const { title, description, theme, password, category, author } = body;
 
     if (!author) {
       return NextResponse.json(
@@ -96,7 +96,7 @@ export async function POST(request) {
       title,
       description,
       theme,
-      vaultType,
+      password,
       category,
       author,
     });
