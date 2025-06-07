@@ -32,33 +32,53 @@ import { NavMain } from "./nav-main";
 import { NavDocuments } from "./nav-documents";
 import { NavSecondary } from "./nav-secondary";
 import { NavUser } from "./nav-user";
+import {
+  BookOpen,
+  Dna,
+  MessageCircle,
+  Search,
+  Settings,
+  TreeDeciduous,
+  Vault,
+} from "lucide-react";
 
 const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/dashboard",
       icon: IconDashboard,
     },
     {
-      title: "Lifecycle",
-      url: "#",
-      icon: IconListDetails,
+      title: "My Vaults",
+      url: "/dashboard/vaults",
+      icon: Vault,
     },
     {
-      title: "Analytics",
-      url: "#",
-      icon: IconChartBar,
+      title: "Family Tree",
+      url: "/dashboard/family-tree",
+      icon: TreeDeciduous,
+    },
+
+    {
+      title: "Memorial Diaries",
+      url: "/dashboard/diaries",
+      icon: BookOpen,
     },
     {
-      title: "Projects",
-      url: "#",
-      icon: IconFolder,
+      title: "Last messages",
+      url: "/dashboard/last-messages",
+      icon: MessageCircle,
     },
     {
-      title: "Team",
-      url: "#",
-      icon: IconUsers,
+      title: "DNA tracking",
+      url: "/dashboard/dna-tracking",
+      icon: Dna,
+    },
+    {
+      title: "Find lost",
+      url: "/dashboard/find-lost",
+      icon: Search,
     },
   ],
   navClouds: [
@@ -157,7 +177,7 @@ export function AppSidebar({ session, ...props }) {
             >
               <a href="#">
                 <IconInnerShadowTop className="!size-5" />
-                <span className="text-base font-semibold">Acme Inc.</span>
+                <span className="text-base font-semibold">Chronotree</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
