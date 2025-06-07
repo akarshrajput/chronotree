@@ -3,6 +3,7 @@ import "./globals.css";
 import ReactQueryProvider from "./_contexts/ReactQueryProvider";
 import { HeaderWrapper } from "./_components/main/header-wrapper";
 import { ThemeProvider } from "./_contexts/theme-provider";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,34 @@ export default async function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
+          <Toaster
+            position="bottom-right"
+            closeButton
+            className="z-[99999]"
+            toastOptions={{
+              classNames: {
+                toast: `
+        rounded-xl 
+        border 
+        shadow-lg 
+        bg-white text-black 
+        dark:bg-zinc-900 dark:text-white 
+        dark:border-zinc-800
+      `,
+                title: "font-semibold",
+                description: "text-muted-foreground text-sm",
+                actionButton: `
+        bg-primary text-primary-foreground
+        hover:bg-primary/90
+        dark:bg-primary dark:text-white
+      `,
+                cancelButton: `
+        bg-muted text-muted-foreground
+        dark:bg-zinc-800 dark:text-zinc-200
+      `,
+              },
+            }}
+          />
           <ReactQueryProvider>
             <div>
               <HeaderWrapper />

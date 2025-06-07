@@ -39,6 +39,7 @@ import {
   Search,
   Settings,
   TreeDeciduous,
+  User,
   Vault,
 } from "lucide-react";
 
@@ -48,6 +49,11 @@ const data = {
       title: "Dashboard",
       url: "/dashboard",
       icon: IconDashboard,
+    },
+    {
+      title: "My Profile",
+      url: "/dashboard/me",
+      icon: User,
     },
     {
       title: "My Vaults",
