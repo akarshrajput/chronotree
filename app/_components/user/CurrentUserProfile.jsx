@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { ShieldCheck } from "lucide-react";
+import { BadgeCheckIcon, ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
 import { LoadingSpinner } from "../main/loading-spinner";
 import { Badge } from "@/components/ui/badge";
@@ -105,9 +105,12 @@ const CurrentUserProfile = ({ session }) => {
           <div className="flex items-center gap-1">
             <Badge variant="secondary">{formData.name}</Badge>
             {formData.verified ? (
-              <Badge variant="secondary">
-                <ShieldCheck className="w-6" />
-                Verified user
+              <Badge
+                variant="secondary"
+                className="bg-blue-500 text-white dark:bg-blue-600"
+              >
+                <BadgeCheckIcon />
+                Verified
               </Badge>
             ) : null}
           </div>

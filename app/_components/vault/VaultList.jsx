@@ -12,10 +12,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Folder, Info, Shield, ShieldCheck, Vault } from "lucide-react";
+import { Folder, Info, Key, Shield, ShieldCheck, Vault } from "lucide-react";
 import { LoadingSpinner } from "../main/loading-spinner";
 import { Badge } from "@/components/ui/badge";
-import { IconTrendingUp } from "@tabler/icons-react";
+import { IconPassword, IconTrendingUp } from "@tabler/icons-react";
+import { formatDistanceToNow } from "date-fns";
 
 // Map themes to Tailwind classes
 const themeClasses = {
@@ -63,7 +64,7 @@ const VaultList = ({ session }) => {
 
   return (
     <div className="mt-6">
-      <Badge className="mb-4">
+      <Badge variant="secondary" className="mb-4">
         <Shield size={14} />
         <p>Vaults are password protected</p>
       </Badge>
@@ -95,9 +96,16 @@ const VaultList = ({ session }) => {
                 </CardContent> */}
 
                 <CardFooter className="flex flex-col items-start gap-1.5">
-                  <div className="flex items-center gap-2 text-sm font-medium text-foreground">
-                    <IconTrendingUp className="size-4 text-yellow-500" />
-                    Last Accessed Recently
+                  <div className="flex items-center  gap-2 text-sm font-medium text-foreground">
+                    <Key className="size-4 text-yellow-500" />
+                    <p className="line-clamp-1">
+                      Last accessed{" "}
+                      {vault.lastAccessedAt
+                        ? formatDistanceToNow(new Date(vault.lastAccessedAt), {
+                            addSuffix: true,
+                          })
+                        : "Never"}
+                    </p>
                   </div>
                   <div className="text-xs text-muted-foreground">
                     Secured by <strong>6-digit PIN</strong>

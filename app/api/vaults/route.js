@@ -18,7 +18,7 @@ export async function GET(request) {
         .populate("notes")
         .populate("author", "name email photo userName verified")
         .select(
-          "title description theme vaultType category photos audios videos notes author"
+          "title description theme vaultType category photos audios videos notes author lastAccessedAt"
         ),
       query
     )
@@ -36,6 +36,7 @@ export async function GET(request) {
       theme: vault.theme,
       vaultType: vault.vaultType,
       category: vault.category,
+      lastAccessedAt: vault.lastAccessedAt,
       author: vault.author,
       numberOfPhotos: vault.photos?.length || 0,
       numberOfAudios: vault.audios?.length || 0,
